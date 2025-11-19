@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pyinfra-net"
+version = "0.1.0"
+description = "Netmiko connector and facts/operations for network devices for pyinfra"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{ name="Julian Jacobsen", email="jj@compositiv.com" }]
+requires-python = ">=3.9"
+dependencies = [
+  "pyinfra>=3.0",
+  "netmiko>=4.6.0",
+]
+
+[project.entry-points."pyinfra.connectors"]
+netmiko = "pyinfra_net.connectors.netmiko:NetmikoConnector"
