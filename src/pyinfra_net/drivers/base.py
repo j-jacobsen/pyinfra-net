@@ -24,6 +24,7 @@ class NetworkDeviceDriver(ABC):
     def process_routes(self, output: Iterable[str]) -> Iterable[Tuple[ip_network, ip_address]]:
         pass
 
+    @property
     def expect_string(self) -> Optional[str]:
         return None
 

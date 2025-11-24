@@ -13,7 +13,7 @@ class NetgearProsafeDriver(NetworkDeviceDriver):
     
     @property
     def expect_string(self) -> str:
-        return r"\(.*\)\s+(\((Vlan|Config)\))?#"
+        return r"\(.*\)\s*(\((Vlan|Config)\))?#"
     
     def show_vlans(self) -> str:
         return "show vlan"
