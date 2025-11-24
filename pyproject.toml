@@ -15,5 +15,8 @@ dependencies = [
   "netmiko>=4.6.0",
 ]
 
+[project.urls]
+Homepage = "https://github.com/j-jacobsen/pyinfra-net"
+
 [project.entry-points."pyinfra.connectors"]
 netmiko = "pyinfra_net.connectors.netmiko:NetmikoConnector"
