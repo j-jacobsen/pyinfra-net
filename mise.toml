@@ -1,0 +1,6 @@
+[env]
+PROJECT_NAME = "{{ config_root | basename }}"
+_.python.venv = { path = ".venv", create = true }
+
+[tools]
+python = "latest"
