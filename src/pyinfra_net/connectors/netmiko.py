@@ -38,9 +38,9 @@ class NetmikoConnector(BaseConnector):
         expect_string = get_driver(self.host.data.get('device_type')).expect_string
 
         if len(lines) > 1:
-            output = self.connection.send_config_set(lines, expect_string=expect_string)
+            output = self.connection.send_config_set(lines, expect_string=expect_string, read_timeout=self.host.data.get('command_timeout', 30.0))
         else:
-            output = self.connection.send_command(command_str, expect_string=expect_string)
+            output = self.connection.send_command(command_str, expect_string=expect_string, read_timeout=self.host.data.get('command_timeout', 30.0))
         
         if print_output and output:
             click.echo("{0}{1}".format(self.host.print_prefix, output), err=True)
